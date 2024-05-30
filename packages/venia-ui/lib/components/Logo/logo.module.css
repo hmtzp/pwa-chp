@@ -1,0 +1,8 @@
+/* logo.module.css */
+.logo {
+    max-width: 323px;
+}
+
+.customLogoClass {
+    position: static;
+}

@@ -1,0 +1,79 @@
+.root {
+    composes: items-center from global;
+    composes: justify-items-center from global;
+    composes: justify-self-center from global;
+    composes: max-w-site from global;
+    composes: px-xs from global;
+    composes: py-0 from global;
+    composes: w-full from global;
+
+    @apply hidden;
+}
+
+.root_open {
+    composes: root;
+
+    composes: z-dropdown from global;
+    @apply grid;
+}
+
+.form {
+    composes: grid from global;
+    composes: items-center from global;
+    composes: justify-items-stretch from global;
+    composes: w-full from global;
+}
+
+.container {
+    composes: inline-flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: max-w-[30rem] from global;
+    composes: pb-xs from global;
+    composes: relative from global;
+    composes: w-full from global;
+}
+
+.search {
+    composes: grid from global;
+    composes: relative from global;
+}
+
+.autocomplete {
+    composes: grid from global;
+    /* composes: relative from global; */
+    composes: z-menu from global;
+}
+
+.tabs {
+    @apply flex justify-around mb-4;
+}
+
+.tabs button {
+    @apply py-2 px-4 bg-none border-none cursor-pointer text-base;
+    padding: 10px 30px;
+    background: white;
+}
+
+.tabs button.active {
+    @apply font-bold;
+    border: 2px solid var(--custom-orange-color);
+    border-bottom:none;
+    z-index: 10;
+    position: relative;
+}
+input[data-cy="SearchField-textInput"] {
+    border: solid 2px var(--custom-orange-color);
+    border-radius: 0 0 4px 4px;
+    margin-top: -4px;
+    z-index: 8;
+    width: 100%;
+}
+div[data-cy="Autocomplete-root"] {
+    border: solid 2px #ff9900;
+    border-top: none;
+}
+.tabs button img {
+    width: auto;
+    height: 20px;
+}

@@ -1,45 +1,23 @@
-#--------------------------#
-# Magento Default Files    #
-#--------------------------#
+node_modules
+npm-debug.log
+.DS_Store
+.vscode
+jsconfig.json
+coverage
+test-results
+dist
+storybook-dist
+.idea
+test-report.xml
+test-results.json
+.env
+yarn-error.log
+# Packages that build partially transpiled ES modules put them here
+docker/certs
+.history
 
-/PATCH_*.sh
+## exception: commit node_modules folders in test fixtures
+!**/__fixtures__/*/node_modules
 
-/app/etc/local.xml
-
-/media/*
-!/media/.htaccess
-
-!/media/customer
-/media/customer/*
-!/media/customer/.htaccess
-
-!/media/dhl
-/media/dhl/*
-!/media/dhl/logo.jpg
-
-!/media/downloadable
-/media/downloadable/*
-!/media/downloadable/.htaccess
-
-!/media/xmlconnect
-/media/xmlconnect/*
-
-!/media/xmlconnect/custom
-/media/xmlconnect/custom/*
-!/media/xmlconnect/custom/ok.gif
-
-!/media/xmlconnect/original
-/media/xmlconnect/original/*
-!/media/xmlconnect/original/ok.gif
-
-!/media/xmlconnect/system
-/media/xmlconnect/system/*
-!/media/xmlconnect/system/ok.gif
-
-/var/*
-!/var/.htaccess
-
-!/var/package
-/var/package/*
-!/var/package/*.xml
-
+## May temporarily create tarballs during scaffolding debug
+packages/**/*.tgz

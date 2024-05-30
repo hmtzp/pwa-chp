@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns a map with expected keys and values 1`] = `
+Map {
+  "MUTATION_QUEUE" => "mutationQueue",
+  "RETRY" => "retry",
+  "GQL_CACHE" => "gqlCache",
+  "STORE" => "store",
+  "ERROR" => "error",
+  "HTTP" => "http",
+}
+`;
