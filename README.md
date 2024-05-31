@@ -1,136 +1,133 @@
-[![Coverage Status](https://coveralls.io/repos/github/magento/pwa-studio/badge.svg?branch=develop)](https://coveralls.io/github/magento/pwa-studio?branch=develop)
-
-# PWA Studio
-
-Magento PWA Studio is a collection of tools that lets developers build complex Progressive Web Applications on top of Magento 2 stores.
-
-## Contributions
-
-Are you interested in contributing to the PWA Studio project?
-Check out the [community wiki][] to learn how to contribute to PWA Studio.
-
-If you are looking for an issue to work on, visit our [community backlog board][] and look at the **Ready for Development** column.
-
-For more information about contributing to this repository, see the [Contribution guide][].
-
-## Useful links
-
-[PWA Studio documentation site][documentation site] -
-The best place to start learning about the tools and the technologies that PWA Studio provides.
-Here, you can learn PWA Studio concepts, find API reference docs, and read tutorials on how to use PWA Studio to create your own PWA storefront.
-
-Here are some popular topics to help you get started:
-
-- [PWA Studio Overview][] - A high level overview of PWA Studio and what it provides to developers
-- [PWA Studio Beginner Guide](https://www.youtube.com/watch?v=n8C87KQT-Bg)
-- [Tools and libraries][] - A list of tools and libraries developers need to be familiar with to use PWA Studio
-- [PWA Studio fundamentals][] - A series of tutorials covering common storefront development tasks
-- [PWA Studio best Practices](https://developer.adobe.com/commerce/pwa-studio/guides/best-practices/)
 
 
-### Venia
+# Evaluacion Frontend
 
-[![Venia](https://raw.githubusercontent.com/wiki/magento/pwa-studio/images/venia.png)][venia]
+Para la ejecucion y visualizacion de este proyecto es necesario:
 
-[Venia][] is a Magento PWA storefront created and powered by PWA Studio tools and libraries.
-Developers can use Venia as a reference storefront for their own projects or as a starting point for customization.
+1. Clonar el repositorio
 
-## About this repository
+2. Abrir la aplicacion de Docker
 
-To facilitate local development, testing, and versioning, PWA Studio is structured as a monorepo using [Yarn Workspaces][].
-Packages in this repository are independently published to [NPM][].
-Install individual packages as needed instead of installing the entire `pwa-studio` project as a dependency of your project.
+3. Nos posicionamos en la carpeta raiz del proyecto, en este caso 'pwa-chp'
 
-**Note:** If you are installing the whole PWA Studio monorepo, please be aware that the project uses `yarn workspaces` and does not support `npm install`. Please use `yarn install` instead.
+4. Ejecutamos el comando 'sh docker/run-docker'
 
-### Packages
+5. Al terminar de construir el proyecto y los contenedores nos dirigimos a la ruta "[https://](https://pwa-docker.localhost:8080/)"
 
-This repository includes the following packages:
+De esta forma visualizaremos el avance del proyecto.
 
-- [**peregrine**](https://developer.adobe.com/commerce/pwa-studio/guides/packages/peregrine/) - A component library for adding logic to visual components
-- **venia-ui** - A library of visual components for PWA storefront projects
-- **venia-concept** - A concept storefront project built using PWA Studio tools
-- [**pwa-buildpack**](https://developer.adobe.com/commerce/pwa-studio/guides/packages/buildpack/) - A tooling library to help with PWA storefront development
-- [**upward-spec**](https://developer.adobe.com/commerce/pwa-studio/guides/packages/upward/) - UPWARD specification and test suite
-- [**upward-js**](https://developer.adobe.com/commerce/pwa-studio/guides/packages/upward/javascript/) - A reference implementation of the UPWARD specification
-- **babel-preset-peregrine** - A [babel][] preset plugin that is required to use peregrine components
-- **graphql-cli-validate-magento-pwa-queries** - A script to validate your project's GraphQL queries against a schema
-- [**pwa-devdocs**](pwa-devdocs) - Project source for the [documentation site][]
+Este proyecto es una implementación personalizada del PWA Studio de Magento, con un enfoque en la mejora visual de acuerdo a los mockups presentados en los siguientes enlaces:
+- https://xd.adobe.com/view/37b7752d-f96f-4c2d-9553-66d32d4aedbd-62e4/
+- https://xd.adobe.com/view/40ad0519-4b53-496e-bc90-d2dd14939a87-15fe/screen/e90c3528-a623-4031-b8c9-758e117fd064
 
-If you have an issue that cannot be resolved, please [create an issue][].
+Todos los cambios realizados están destinados a personalizar la apariencia y la experiencia del usuario sin alterar las funcionalidades subyacentes del sitio web.
 
-### PWA Studio UI Kit for Adobe XD
+# Cambios Realizados
+Componentes Modificados:
 
-Adobe XD makes handoff between designers and engineers more efficient through easy-to-use collaboration tools. The [PWA Studio UI Kit][] contains a collection of templates and components compatible with Adobe Commerce.
+- AccountChip
+Fue necesario modificar el icono nativo por el brindado en el diseño, asi como los estilos de los divs contenedores
+accountChip.js
+accountChip.module.css
+AccountMenu
+accountMenu.module.css
 
-![UI Kit](https://raw.githubusercontent.com/wiki/magento/pwa-studio/images/xd-ui-kit.png)
 
-### Join the conversation
+- Button
+Para los botones, se generalizo el primary-button, para dar la aperiencia allegada al diseño y a los colores de la marca
+button.module.css
 
-If you have any project questions, concerns, or contribution ideas, join our [#pwa slack channel][]!
+- Fields
+Retomando la parte de los iconos, fue necesario intervenir de diferentes componentes los iconos a cambiar, asi como sus estilos
+FieldIcons
+fieldIcons.js
+fieldIcons.module.css
 
-Here you can find a [public calendar][] with events that Magento PWA team runs with Community. You can also [add that calendar][] to your calendar app to stay up to date with the changes and get notifications.
 
-### Community Maintainers
+- MiniCart
+Se actualizaron los estilos para alinear los íconos de campo con el nuevo diseño visual del carrito
+cartTrigger.js
+cartTrigger.module.css
+item.module.css
+miniCart.module.css
 
-A community maintainer is a point of contact from the community approved by the Core Team to help with community outreach and project administration.
+- Header
+El Header presento los cambios estructurales mas grandes, añadiendo contenedores nuevos para la manipulacion de mediaqueries
+header.js
+header.module.css
 
-The following members are the community maintainers for this project:
+- Storeswitcher
+El storeswitcher se utilizo como banner de promociones, en este caso se añadio un texto en duro para lograr el objetivo
+storeSwitcher.js
+storeSwitcher.module.css
 
-[![larsroettig-image]][larsroettig]
-[![Jordaneisenburger-image]][Jordaneisenburger]
+- Iconos
+Se añadieron reglas nuevas para apuntar y definir tamaños de iconos agregados.
+icon.module.css
 
-[Jordaneisenburger]: https://github.com/Jordaneisenburger
-[Jordaneisenburger-image]: https://avatars0.githubusercontent.com/u/19858728?v=4&s=60
+- Image
+El generalizar los estilos de las imagenes con diferentes componentes fue una de las tareas, pues me percate que ninguna imagen contaba con borde, entre otras propiedades.
+image.js
 
-[larsroettig]: https://github.com/larsroettig
-[larsroettig-image]: https://avatars0.githubusercontent.com/u/5289370?v=4&s=60
+- Logo
+El cambio de logo, implico el ajuste de este componente, por lo que se hizo lo correspondiente al agregar el logo de la tienda y el ajuste de tamaño adecuado.
+logo.js
 
-### Top Community Contributors
+- Megamenu
+El megamenu, que forma parte del HGeader, fue el que sufrio un cambio de estructura, aun con algunos cambios por integrar, no deja de ser funcional.
+MegaMenu
+megaMenu.module.css
+megaMenuItem.module.css
+submenu.module.css
 
-The PWA Studio project welcomes all codebase and documentation contributions.
-We would like to recognize the following community members for their efforts on improving the PWA Studio project in our latest release.
+- Account
+Entre algunos de los componentes de esta seccion, fueron necesarios añadir ciertos cambios que requeria cambio de estilos principalmente.
+password.module.css
+signIn.module.css
+index.js
 
-| Author           | Commits | Added Lines | Removed Lines | Avg. Files |
-| ---------------- | ------- | ----------- | ------------- | ---------- |
-| Justin Conabree  | 94      | 15932       | 4837          | 7.117      |
-| Mikhaël Bois     | 46      | 7675        | 2000          | 12.226     |
-| Pankhuri Goel    | 28      | 11402       | 9343          | 13.606     |
-| Lars Roettig     | 15      | 2350        | 862           | 8.067      |
-| Pedro Chiossi    | 9       | 9063        | 7625          | 38.571     |
-| Allan Yanik      | 6       | 834         | 677           | 25         |
-| Sofia Hernandez  | 6       | 781         | 145           | 21         |
-| Oleksandr Krasko | 2       | 193         | 1             | 4          |
-| Antoine Fontaine | 1       | 44          | 45            | 14         |
-| Shikha Mishra    | 1       | 584         | 5             | 13         |
+- SearchBar
+La barra de busqueda fue una integracion mas completa, añadiendo tabs de tiendas en las que se desea hacer la busqueda con identificadores en cada uno de ellos, la funcionalidad no llegue a integrarla por completo, pues sigue haciendo la busqueda nativa del tema, me enfoque en la parte visual.
+searchBar.js
+searchBar.module.css
 
-<small>_Last Updated: October 14, 2021_</small>
+- Variables
+Se añadio una variable de color, la cual equivale al predominante que es el naranja y el rojo.
+tokens.module.css
 
-**Source:** [statistic.magento.engineering][]
+# Archivos nuevos añadidos:
 
-[statistic.magento.engineering]: <https://statistic.magento.engineering/app/kibana#/dashboard/fe6a4960-8adf-11ea-b035-e1712195ddd1?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2021-08-01T05:00:00.000Z',mode:absolute,to:'2021-10-14T18:14:39.005Z'))&_a=(description:'Custom%20Overview%20Panel%20by%20Magento',filters:!(('$state':(store:appState),meta:(alias:'Empty%20Commits',disabled:!f,index:git,key:files,negate:!t,params:(query:'0',type:phrase),type:phrase,value:'0'),query:(match:(files:(query:'0',type:phrase)))),('$state':(store:appState),meta:(alias:Bots,disabled:!f,index:github_issues,key:author_bot,negate:!t,params:(query:!t,type:phrase),type:phrase,value:true),query:(match:(author_bot:(query:!t,type:phrase)))),('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'0211efb0-14ca-11e9-8aac-ef7fd4d8cbad',key:Author_domain,negate:!t,params:!(magento.com,adobe.com),type:phrases,value:'magento.com,%20adobe.com'),query:(bool:(minimum_should_match:1,should:!((match_phrase:(Author_domain:magento.com)),(match_phrase:(Author_domain:adobe.com)))))),('$state':(store:appState),meta:(alias:!n,disabled:!f,index:git,key:author_name,negate:!t,params:!('Revanth%20Kumar%20Annavarapu','Revanth%20Kumar',Devagouda,dependabot%5Bbot%5D,jimbo,'Tommy%20Wiebell','Stephen%20Rugh','Anthoula%20Wojczak','James%20Calcaben','Andy%20Terranova','Hwashiang%20(Michael)%20Yu','Bruce%20Denham','Oleksandr%20Rykh'),type:phrases,value:'Revanth%20Kumar%20Annavarapu,%20Revanth%20Kumar,%20Devagouda,%20dependabot%5Bbot%5D,%20jimbo,%20Tommy%20Wiebell,%20Stephen%20Rugh,%20Anthoula%20Wojczak,%20James%20Calcaben,%20Andy%20Terranova,%20Hwashiang%20(Michael)%20Yu,%20Bruce%20Denham,%20Oleksandr%20Rykh'),query:(bool:(minimum_should_match:1,should:!((match_phrase:(author_name:'Revanth%20Kumar%20Annavarapu')),(match_phrase:(author_name:'Revanth%20Kumar')),(match_phrase:(author_name:Devagouda)),(match_phrase:(author_name:dependabot%5Bbot%5D)),(match_phrase:(author_name:jimbo)),(match_phrase:(author_name:'Tommy%20Wiebell')),(match_phrase:(author_name:'Stephen%20Rugh')),(match_phrase:(author_name:'Anthoula%20Wojczak')),(match_phrase:(author_name:'James%20Calcaben')),(match_phrase:(author_name:'Andy%20Terranova')),(match_phrase:(author_name:'Hwashiang%20(Michael)%20Yu')),(match_phrase:(author_name:'Bruce%20Denham')),(match_phrase:(author_name:'Oleksandr%20Rykh'))))))),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!t),panels:!((embeddableConfig:(title:Commits,vis:(legendOpen:!f)),gridData:(h:8,i:'2',w:16,x:0,y:36),id:git_evolution_commits,panelIndex:'2',title:'Git%20Commits',type:visualization,version:'6.8.6'),(embeddableConfig:(title:'Github%20Issues'),gridData:(h:8,i:'31',w:24,x:0,y:28),id:github_issues_main_metrics,panelIndex:'31',title:'Github%20Issues',type:visualization,version:'6.8.6'),(embeddableConfig:(title:'GitHub%20Issues',vis:(legendOpen:!f)),gridData:(h:8,i:'32',w:24,x:0,y:20),id:github_issues_evolutionary,panelIndex:'32',title:'GitHub%20Issues',type:visualization,version:'6.8.6'),(embeddableConfig:(title:'GitHub%20Issues%20Submitters'),gridData:(h:8,i:'33',w:16,x:32,y:36),id:github_issues_evolutionary_submitters,panelIndex:'33',title:'GitHub%20Issues%20Submitters',type:visualization,version:'6.8.6'),(embeddableConfig:(title:'GitHub%20Pull%20Requests'),gridData:(h:8,i:'34',w:24,x:24,y:28),id:github_pullrequests_main_metrics,panelIndex:'34',title:'GitHub%20Pull%20Requests',type:visualization,version:'6.8.6'),(embeddableConfig:(title:'Pull%20Requests',vis:(legendOpen:!f)),gridData:(h:8,i:'35',w:24,x:24,y:20),id:github_pullrequests_pullrequests,panelIndex:'35',title:'GitHub%20Pull%20Requests',type:visualization,version:'6.8.6'),(embeddableConfig:(title:'Pull%20Request%20Submitters',vis:(legendOpen:!f)),gridData:(h:8,i:'36',w:16,x:16,y:36),id:github_pullrequests_submitters_evolutionary,panelIndex:'36',title:'GitHub%20Pull%20Request%20Submitters',type:visualization,version:'6.8.6'),(embeddableConfig:(title:'Git%20Top%20Authors',vis:(params:(config:(searchKeyword:''),sort:(columnIndex:!n,direction:!n)))),gridData:(h:20,i:'111',w:24,x:0,y:0),id:git_overview_top_authors,panelIndex:'111',title:'Top%20Code%20Contributors',type:visualization,version:'6.8.6'),(embeddableConfig:(title:'-',vis:(params:(config:(searchKeyword:''),sort:(columnIndex:1,direction:desc)))),gridData:(h:20,i:'114',w:24,x:24,y:0),id:f747c010-9041-11ea-b035-e1712195ddd1,panelIndex:'114',title:'Magento%20Projects',type:visualization,version:'6.8.6')),query:(language:lucene,query:'*pwa-studio'),timeRestore:!f,title:Overview,viewMode:view)>
+- Se creo un visualizador de la consulta solicitada que funcionaria como category
+packages/venia-ui/lib/App.js
 
-[Contribution guide]: .github/CONTRIBUTING.md
-[Coverage Status]: https://coveralls.io/repos/github/magento/pwa-studio/badge.svg?branch=main
-[create an issue]: https://github.com/magento/pwa-studio/issues/new
-[documentation site]: https://developer.adobe.com/commerce/pwa-studio/
-[Git hook]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
-[NPM]: https://www.npmjs.com/org/magento
-[selective dependency resolutions]: https://yarnpkg.com/lang/en/docs/selective-version-resolutions/
-[Troubleshooting]: https://developer.adobe.com/commerce/pwa-studio/troubleshooting/
-[Venia storefront setup]: https://developer.adobe.com/commerce/pwa-studio/tutorials/setup-storefront/
-[PWA Studio fundamentals]: https://developer.adobe.com/commerce/pwa-studio/tutorials/setup-storefront/
-[workspace commands]: https://yarnpkg.com/en/docs/cli/workspace
-[Yarn Workspaces]: https://yarnpkg.com/en/docs/workspaces/
-[community wiki]: https://github.com/magento/pwa-studio/wiki
-[pwa studio overview]: https://developer.adobe.com/commerce/pwa-studio/guides/
-[tools and libraries]: https://developer.adobe.com/commerce/pwa-studio/guides/project/tools-libraries/
-[venia storefront setup]: https://developer.adobe.com/commerce/pwa-studio//tutorials/setup-storefront/
-[project coding standards and conventions]: https://github.com/magento/pwa-studio/wiki/Project-coding-standards-and-conventions
-[community backlog board]: https://github.com/magento/pwa-studio/projects/1
-[#pwa slack channel]: https://magentocommeng.slack.com/messages/C71HNKYS2
-[babel]: https://babeljs.io/
-[venia]: https://venia.magento.com/
-[public calendar]: https://opensource.magento.com/community-calendar
-[add that calendar]: https://calendar.google.com/calendar/ical/sn3me3pduhd92hhk9s7frkn57o%40group.calendar.google.com/public/basic.ics
-[PWA Studio UI Kit]: https://developer.adobe.com/commerce-xd-kits/
+- Se configuro apoloclient para interactuar con la API de GraphQL
+packages/venia-ui/lib/apolloClient.js
+
+- Se creo un componente el cual funcionaria como custom category view en donde se renderizan los productos de la consulta
+packages/venia-ui/lib/components/CategoryProducts/CategoryProducts.js
+
+
+- Se creo tambien un componente ProductCard, para recibir los datos consultados por item y renderizarlo en una tarjeta.
+packages/venia-ui/lib/components/ProductCard/ProductCard.js
+packages/venia-ui/lib/components/ProductCard/ProductCard.module.css
+
+- Se creo el archivo que contiene una consulta GraphQL, esto para escabilidad y organizacion de codigo
+packages/venia-ui/lib/queries.js
+
+- Se crearon hooks personalizados para una mejor organizacion y mantenimiento.
+packages/venia-ui/lib/talons/useCategoryProducts.js
+packages/venia-ui/lib/talons/useSearchProducts.js
+
+* En este release no se obtubieron resultados positivos a la busqueda y renderizacion de la consulta.
+
+- Imagenes nuevas necesarias.
+packages/venia-ui/lib/components/Logo/ChupapreciosLogotipo.png
+packages/venia-ui/lib/components/Header/cart.svg
+packages/venia-ui/lib/components/SearchBar/Amazon_logo.png
+packages/venia-ui/lib/components/SearchBar/eb.png
+packages/venia-ui/lib/components/SearchBar/hdep.png
+packages/venia-ui/lib/components/SearchBar/wm.png
+packages/venia-ui/lib/components/AccountChip/account.svg
+
+# Conclusión
+En este Release del evaluacion se entrega de manera parcial, pero con una buena cantidad de puntos a evaluar, enfocandome en el detalle de los estilos y diseño sin perder la funcionalidad y obteniendo recursos que fueran acorde a los mockups, ya que solo se tiene permiso de visualizacion y no es posible obtener recursos.

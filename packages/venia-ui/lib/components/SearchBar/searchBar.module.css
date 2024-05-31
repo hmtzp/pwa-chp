@@ -77,3 +77,10 @@ div[data-cy="Autocomplete-root"] {
     width: auto;
     height: 20px;
 }
+.inactiveImg {
+    filter: grayscale(100%);
+}
+
+.activeImg {
+    filter: none;
+}

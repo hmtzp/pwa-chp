@@ -1,7 +1,7 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { bool, shape, string } from 'prop-types';
-import { Loader, User as AccountIcon } from 'react-feather';
+import { Loader } from 'react-feather'; // No se necesita 'User' (AccountIcon) más
 
 import { useAccountChip } from '@magento/peregrine/lib/talons/AccountChip/useAccountChip';
 import { useStyle } from '@magento/venia-ui/lib/classify';
@@ -9,6 +9,8 @@ import { useStyle } from '@magento/venia-ui/lib/classify';
 import Icon from '../Icon';
 import defaultClasses from './accountChip.module.css';
 import { GET_CUSTOMER_DETAILS } from './accountChip.gql';
+
+import accountIcon from './account.svg';
 
 /**
  * The AccountChip component shows an icon next to some text.
@@ -63,7 +65,7 @@ const AccountChip = props => {
 
     return (
         <span className={classes.root}>
-            <Icon src={AccountIcon} />
+            <img src={accountIcon} alt="Account Icon" className={classes.customIcon} />
             <span
                 aria-label={ariaLabel}
                 aria-atomic="true"
@@ -83,7 +85,8 @@ AccountChip.propTypes = {
     classes: shape({
         root: string,
         loader: string,
-        text: string
+        text: string,
+        customIcon: string 
     }),
     fallbackText: string,
     shouldIndicateLoading: bool

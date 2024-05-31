@@ -1,6 +1,5 @@
 .counter {
     composes: absolute from global;
-    composes: bg-brand-dark from global;
     composes: font-semibold from global;
     composes: leading-tight from global;
     composes: left-sm from global;
@@ -11,6 +10,7 @@
     composes: text-sm from global;
     composes: text-white from global;
     composes: top-1.5 from global;
+    background-color: #d84752;
 }
 
 .trigger {
@@ -45,4 +45,9 @@
     composes: flex from global;
 
     composes: lg_hidden from global;
+}
+.customIcon {
+    width: 24px; 
+    height: 24px;
+    margin-right: 8px;
 }

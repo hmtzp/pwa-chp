@@ -54,10 +54,11 @@
 
 .contents_open {
     composes: contents;
-
     transform: translate3d(0, 4px, 0);
     transition-duration: 224ms;
     transition-timing-function: var(--venia-global-anim-in);
+    border: 2px solid;
+    border-radius: 8px;
 }
 
 .header {
@@ -70,12 +71,12 @@
     composes: grid-cols-autoLast from global;
     composes: items-center from global;
     composes: leading-tight from global;
-    composes: mx-xs from global;
     composes: my-0 from global;
     composes: pb-2xs from global;
     composes: pt-xs from global;
     composes: px-2xs from global;
     composes: text-sm from global;
+    background-color: #f2f2f2;
 }
 
 .stockStatusMessageContainer {
@@ -128,7 +129,6 @@
     composes: items-center from global;
     composes: justify-items-center from global;
     composes: leading-normal from global;
-    composes: mx-xs from global;
     composes: my-0 from global;
     composes: overflow-hidden from global;
     composes: p-xs from global;
@@ -142,9 +142,7 @@
     @apply bg-brand-dark;
     @apply border-0;
     composes: font-bold from global;
-    composes: m-auto from global;
-    composes: w-[10rem] from global;
-    grid-column: 1 / span 1;
+    composes: w-full from global;
 }
 
 .editCartButton {

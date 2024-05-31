@@ -24,9 +24,7 @@
 }
 
 .thumbnail {
-    composes: border from global;
-    composes: border-solid from global;
-    composes: border-subtle from global;
+    border: none;
 }
 
 .name {

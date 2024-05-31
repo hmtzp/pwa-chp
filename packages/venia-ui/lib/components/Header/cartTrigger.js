@@ -1,6 +1,5 @@
 import React, { Fragment, Suspense } from 'react';
 import { shape, string } from 'prop-types';
-import { ShoppingBag as ShoppingCartIcon } from 'react-feather';
 import { useIntl } from 'react-intl';
 
 import { useCartTrigger } from '@magento/peregrine/lib/talons/Header/useCartTrigger';
@@ -11,6 +10,8 @@ import defaultClasses from './cartTrigger.module.css';
 import { GET_ITEM_COUNT_QUERY } from './cartTrigger.gql';
 
 const MiniCart = React.lazy(() => import('../MiniCart'));
+
+import cartIcon from './cart.svg';
 
 const CartTrigger = props => {
     const {
@@ -62,7 +63,7 @@ const CartTrigger = props => {
                     onClick={handleTriggerClick}
                     data-cy="CartTrigger-trigger"
                 >
-                    <Icon src={ShoppingCartIcon} />
+                    <img src={cartIcon} alt="Cart Icon" className={classes.customIcon} />
                     {maybeItemCounter}
                 </button>
             </div>
@@ -72,7 +73,7 @@ const CartTrigger = props => {
                 className={classes.link}
                 onClick={handleLinkClick}
             >
-                <Icon src={ShoppingCartIcon} />
+                <img src={cartIcon} alt="Cart Icon" className={classes.customIcon} />
                 {maybeItemCounter}
             </button>
             <Suspense fallback={null}>
@@ -97,6 +98,7 @@ CartTrigger.propTypes = {
         openIndicator: string,
         root: string,
         trigger: string,
-        triggerContainer: string
+        triggerContainer: string,
+        customIcon: string 
     })
 };

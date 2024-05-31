@@ -4,6 +4,8 @@
     composes: justify-items-stretch from global;
     composes: px-sm from global;
     composes: py-xs from global;
+    border: 2px solid;
+    border-radius: 8px;
 }
 
 .forgotPassword {

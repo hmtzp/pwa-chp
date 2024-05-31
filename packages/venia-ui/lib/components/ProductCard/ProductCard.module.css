@@ -1,0 +1,40 @@
+.product-card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-name {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.product-rating {
+    color: #ffc107;
+    margin: 8px 0;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        padding: 12px;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .product-price {
+        font-size: 14px;
+    }
+}

@@ -4,7 +4,7 @@
     composes: max-w-[100vw] from global;
     composes: opacity-0 from global;
     composes: overflow-visible from global;
-    composes: top-full from global;
+    composes: top-2/4 from global;
     composes: z-menu from global;
     composes: -translate-x-1/2 from global;
 
@@ -24,8 +24,6 @@
 
 .root_open {
     composes: root;
-
-    composes: left-1/2 from global;
     composes: opacity-100 from global;
     transition: opacity 224ms var(--venia-global-anim-in),
         visibility 224ms var(--venia-global-anim-in), left 0s;

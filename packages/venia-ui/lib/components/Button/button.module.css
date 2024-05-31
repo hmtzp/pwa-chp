@@ -12,7 +12,6 @@
     composes: outline-none from global;
     composes: pointer-events-auto from global;
     composes: px-sm from global;
-    composes: rounded-button from global;
     composes: text-center from global;
     composes: text-sm from global;
     composes: uppercase from global;
@@ -69,8 +68,9 @@
 .root_highPriority {
     composes: root;
 
-    composes: bg-brand-dark from global;
-    composes: border-brand-dark from global;
+    background: #d84752;
+    border: none;
+    color: #fff;
     composes: text-white from global;
 
     composes: active_bg-brand-darkest from global;

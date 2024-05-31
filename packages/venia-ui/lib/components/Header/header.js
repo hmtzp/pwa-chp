@@ -80,18 +80,17 @@ const Header = props => {
                         <div className={classes.secondaryActions}>
                             <AccountTrigger />
                             <CartTrigger />
-                        </div>
+                    </div>
                     </div>
                 </div>
-                <PageLoadingIndicator absolute />
+                <div>
+                    <MegaMenu />
+                </div>
             </header>
             <OnlineIndicator
                 hasBeenOffline={hasBeenOffline}
                 isOnline={isOnline}
             />
-            <div className={classes.switchersContainer}>
-                <MegaMenu />
-            </div>
         </Fragment>
     );
 };

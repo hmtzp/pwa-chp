@@ -7,7 +7,7 @@
 
 .icon {
     fill: var(--fill, none);
-    stroke: var(--stroke, rgb(var(--venia-global-color-text)));
+    stroke: #fff;
 }
 
 .icon_desktop {

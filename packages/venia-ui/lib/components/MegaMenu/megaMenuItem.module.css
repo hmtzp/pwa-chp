@@ -7,7 +7,8 @@
 .megaMenuLink {
     composes: items-center from global;
     composes: inline-flex from global;
-    min-height: 5rem;
+    composes: pb-4 from global;
+    min-height: 2rem;
 }
 
 .megaMenuLinkActive {

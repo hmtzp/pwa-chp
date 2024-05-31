@@ -17,7 +17,7 @@ const FieldIcons = props => {
     return (
         <span className={classes.root} style={style}>
             <span className={classes.input}>{children}</span>
-            <span className={classes.before}>{before}</span>
+            <span className={classes.after}>{before}</span>
             <span className={classes.after} aria-hidden="false">
                 {after}
             </span>

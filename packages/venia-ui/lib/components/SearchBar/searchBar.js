@@ -9,7 +9,6 @@ import Autocomplete from './autocomplete';
 import SearchField from './searchField';
 import defaultClasses from './searchBar.module.css';
 
-// Importa las imágenes
 import amazonLogo from './Amazon_logo.png';
 import ebayLogo from './eb.png';
 import walmartLogo from './wm.png';
@@ -42,17 +41,45 @@ const SearchBar = React.forwardRef((props, ref) => {
     return (
         <div className={rootClassName} data-cy="SearchBar-root" ref={ref}>
             <div className={classes.tabs}>
-                <button onClick={() => handleTabChange('amazon')} className={activeTab === 'amazon' ? classes.active : ''}>
-                    <img src={amazonLogo} alt="Amazon" />
+                <button
+                    onClick={() => handleTabChange('amazon')}
+                    className={activeTab === 'amazon' ? classes.active : ''}
+                >
+                    <img
+                        src={amazonLogo}
+                        alt="Amazon"
+                        className={activeTab === 'amazon' ? classes.activeImg : classes.inactiveImg}
+                    />
                 </button>
-                <button onClick={() => handleTabChange('ebay')} className={activeTab === 'ebay' ? classes.active : ''}>
-                    <img src={ebayLogo} alt="Ebay" />
+                <button
+                    onClick={() => handleTabChange('ebay')}
+                    className={activeTab === 'ebay' ? classes.active : ''}
+                >
+                    <img
+                        src={ebayLogo}
+                        alt="Ebay"
+                        className={activeTab === 'ebay' ? classes.activeImg : classes.inactiveImg}
+                    />
                 </button>
-                <button onClick={() => handleTabChange('walmart')} className={activeTab === 'walmart' ? classes.active : ''}>
-                    <img src={walmartLogo} alt="Walmart" />
+                <button
+                    onClick={() => handleTabChange('walmart')}
+                    className={activeTab === 'walmart' ? classes.active : ''}
+                >
+                    <img
+                        src={walmartLogo}
+                        alt="Walmart"
+                        className={activeTab === 'walmart' ? classes.activeImg : classes.inactiveImg}
+                    />
                 </button>
-                <button onClick={() => handleTabChange('homedepot')} className={activeTab === 'homedepot' ? classes.active : ''}>
-                    <img src={homeDepotLogo} alt="Home Depot" />
+                <button
+                    onClick={() => handleTabChange('homedepot')}
+                    className={activeTab === 'homedepot' ? classes.active : ''}
+                >
+                    <img
+                        src={homeDepotLogo}
+                        alt="Home Depot"
+                        className={activeTab === 'homedepot' ? classes.activeImg : classes.inactiveImg}
+                    />
                 </button>
             </div>
             <div ref={containerRef} className={classes.container}>
@@ -95,7 +122,9 @@ SearchBar.propTypes = {
         root_open: string,
         search: string,
         tabs: string,
-        active: string
+        active: string,
+        activeImg: string,
+        inactiveImg: string
     }),
     isOpen: bool
 };
